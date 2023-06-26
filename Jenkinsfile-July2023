@@ -13,7 +13,7 @@ node{
   stage('4UploadArtifacts'){
     sh "${mavenHome}/bin/mvn deploy"
   }
-
+*/
    stage('5Deploy'){
      deploy adapters: [tomcat9(credentialsId: 'tomcat-credential', path: '', url: 'http://18.117.236.115:8177/')], contextPath: null, war: 'target/*war'
   }
@@ -22,5 +22,4 @@ node{
 Build status
 Landmark Technologies''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
   }
-*/
 }
